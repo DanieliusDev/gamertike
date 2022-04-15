@@ -1,4 +1,3 @@
-<h1>Hi im Gamertike!</h1>
-<p>I am a guy who creates Discord bot, Websites, NPM Packages and more!</p>
-<br>
-<p>I am always learning new skills to make better applications!</p>
+# Hi im Danielius!
+
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=gamertike&show_icons=true&theme=onedark)
