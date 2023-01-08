@@ -7,7 +7,11 @@ export default async function Page() {
 			<h1 className="text-center">
 				Hey, im <a href="https://github.com/gamertike">Gamertike</a>!
 			</h1>
-			<h2 className="my-6">About me</h2>
+			<a href="#about" className="text-white">
+				<h2 id="about" className="my-6">
+					About me
+				</h2>
+			</a>
 			<p>
 				I{"'"}m a self-taught programmer located in the U.K who loves creating and
 				maintaining projects as a hobby. The main programming language i use is{' '}
@@ -24,9 +28,17 @@ export default async function Page() {
 				</a>
 				.
 			</p>
-			<h2 className="my-6">Featured Projects</h2>
+			<a href="#projects" className="text-white">
+				<h2 id="projects" className="my-6">
+					Featured Projects
+				</h2>
+			</a>
 			<Projects />
-			<h2 className="my-6">Technologies I{"'"}ve used</h2>
+			<a href="#technologies" className="text-white">
+				<h2 id="technologies" className="my-6">
+					Technologies I{"'"}ve used
+				</h2>
+			</a>
 			<Technologies />
 		</>
 	);
