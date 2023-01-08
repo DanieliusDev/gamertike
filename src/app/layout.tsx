@@ -9,6 +9,7 @@ const montserrat = Montserrat({ subsets: ['latin'] });
 export default function Layout({ children }: React.PropsWithChildren) {
 	return (
 		<html lang="en">
+			<head />
 			<body className={`flex flex-col h-screen ${montserrat.className}`}>
 				<Navbar />
 				<main className="flex-grow">{children}</main>
