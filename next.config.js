@@ -2,9 +2,6 @@
  * @type {import('next').NextConfig}
  */
 module.exports = {
-	experimental: {
-		appDir: true,
-	},
 	async redirects() {
 		return [
 			{ source: '/github', destination: 'https://github.com/gamertike', permanent: false },
