@@ -1,7 +1,7 @@
 <div align="center">
-    <a href="https://gamertike.com" target="_blank" rel="noreferrer">
-        <h1>Hey, im Gamertike!</h1>
-    </a>
+    <h1>
+        Hey, im <a href="https://gamertike.com" target="_blank" rel="noreferrer">Gamertike</a>!
+    </h1>
     <img
         src="https://github-readme-stats.vercel.app/api?username=gamertike&show_icons=true&theme=onedark&hide_title=true&include_all_commits=true&card_width=500"
         alt="Github Stats"
