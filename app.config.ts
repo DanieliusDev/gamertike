@@ -8,6 +8,7 @@ export default defineConfig({
     },
   },
   server: {
+    preset: "vercel",
     routeRules: {
       "/github": { redirect: "https://github.com/gamertike" },
       "/crates.io": { redirect: "https://crates.io/users/gamertike" },
