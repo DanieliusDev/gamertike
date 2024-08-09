@@ -15,6 +15,7 @@ import {
   SiReact,
   SiRust,
   SiSolid,
+  SiSvelte,
   SiTailwindcss,
   SiTauri,
   SiTypescript,
@@ -95,6 +96,7 @@ export const Technologies: Component = () => {
           href="https://discord.js.org"
           icon={SiDiscord}
         />
+        <Technology title="Svelte" href="https://svelte.dev" icon={SiSvelte} />
       </TechCategory>
       <TechCategory title="Runtimes">
         <Technology
