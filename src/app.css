@@ -2,58 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  body {
-    @apply bg-zinc-900 text-white;
-  }
+::-webkit-scrollbar {
+  @apply w-2;
+}
 
-  a {
-    @apply hover:brightness-90 text-blue-500;
-  }
-
-  a,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-semibold;
-  }
-
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply pb-2 border-b-2 border-zinc-700;
-  }
-
-  h1 {
-    @apply text-4xl mb-8;
-  }
-
-  h2 {
-    @apply text-3xl;
-  }
-
-  h3 {
-    @apply text-2xl;
-  }
-
-  h4 {
-    @apply text-xl;
-  }
-
-  h5 {
-    @apply text-lg;
-  }
-
-  ::-webkit-scrollbar {
-    @apply w-2;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    @apply bg-blue-500 rounded-full hover:bg-blue-600;
-  }
+::-webkit-scrollbar-thumb {
+  @apply bg-blue-500 rounded-full hover:bg-blue-600;
 }

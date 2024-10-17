@@ -1,12 +1,12 @@
 {
-  "name": "gamertike",
+  "name": "danielius.dev",
   "description": "A self-taught programmer",
   "version": "0.0.0",
   "private": true,
-  "repository": "gamertike/gamertike",
-  "homepage": "https://gamertike.com",
+  "repository": "DanieliusDev/DanieliusDev",
+  "homepage": "https://danielius.dev",
   "contributors": [
-    "Danielius aka Gamertike (https://gamertike.com)"
+    "Danielius Vaisnoras (https://danielius.dev)"
   ],
   "license": "MIT",
   "type": "module",
@@ -22,25 +22,29 @@
     "start": "vinxi start"
   },
   "dependencies": {
-    "@solidjs/start": "^1.0.2",
+    "@solidjs/start": "^1.0.8",
+    "clsx": "^2.1.1",
     "solid-icons": "^1.1.0",
-    "solid-js": "^1.8.18",
-    "vinxi": "^0.3.12"
+    "solid-js": "^1.9.2",
+    "tailwind-merge": "^2.5.4",
+    "vinxi": "^0.4.3"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.3.0",
-    "@commitlint/config-conventional": "^19.2.2",
-    "@commitlint/types": "^19.0.3",
-    "@types/node": "^20.14.9",
-    "autoprefixer": "^10.4.19",
-    "eslint": "^8.57.0",
-    "eslint-plugin-solid": "^0.14.1",
-    "husky": "^9.0.11",
-    "postcss": "^8.4.39",
-    "prettier": "^3.3.2",
-    "tailwindcss": "^3.4.4",
-    "typescript": "^5.5.3",
-    "typescript-eslint": "7.14.1"
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "@commitlint/types": "^19.5.0",
+    "@eslint/js": "^9.12.0",
+    "@types/eslint__js": "^8.42.3",
+    "@types/node": "^22.7.5",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.12.0",
+    "eslint-plugin-solid": "^0.14.3",
+    "husky": "^9.1.6",
+    "postcss": "^8.4.47",
+    "prettier": "^3.3.3",
+    "tailwindcss": "^3.4.14",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "8.9.0"
   },
   "packageManager": "pnpm@9.4.0+sha512.f549b8a52c9d2b8536762f99c0722205efc5af913e77835dbccc3b0b0b2ca9e7dc8022b78062c17291c48e88749c70ce88eb5a74f1fa8c4bf5e18bb46c8bd83a"
 }

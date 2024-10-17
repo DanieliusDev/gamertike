@@ -1,5 +1,3 @@
-import { type Component } from "solid-js";
-import { SocialLink } from "~/components";
 import {
   SiDiscord,
   SiGithub,
@@ -9,8 +7,17 @@ import {
   SiSteam,
   SiTiktok,
 } from "solid-icons/si";
+import { IconTypes } from "solid-icons";
 
-export const SocialLinks: Component = () => {
+import Link from "./Link";
+
+interface SocialLinkProps {
+  title: string;
+  href: string;
+  icon: IconTypes;
+}
+
+export default function SocialLinks() {
   return (
     <div class="flex items-center space-x-3 text-2xl">
       <SocialLink title="GitHub" href="/github" icon={SiGithub} />
@@ -22,4 +29,16 @@ export const SocialLinks: Component = () => {
       <SocialLink title="Steam" href="/steam" icon={SiSteam} />
     </div>
   );
-};
+}
+
+function SocialLink(props: SocialLinkProps) {
+  return (
+    <Link
+      href={props.href}
+      class="text-white hover:text-blue-500 hover:scale-110 transition ease-in-out"
+      target="_blank"
+    >
+      <props.icon title={props.title} />
+    </Link>
+  );
+}

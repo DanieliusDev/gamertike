@@ -3,21 +3,21 @@ import { createHandler, StartServer } from "@solidjs/start/server";
 
 export default createHandler(() => (
   <StartServer
-    document={({ assets, children, scripts }) => (
+    document={(props) => (
       <html lang="en">
         <head>
           <meta charset="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href="/logo.jpg" />
-          <title>Gamertike</title>
+          <title>Danielius</title>
           <meta name="description" content="A self-taught programmer." />
-          {assets}
+          {props.assets}
         </head>
-        <body class="h-screen">
-          <div id="app" class="h-full flex flex-col">
-            {children}
+        <body class="bg-zinc-900 text-white">
+          <div id="app" class="h-screen flex flex-col">
+            {props.children}
           </div>
-          {scripts}
+          {props.scripts}
         </body>
       </html>
     )}

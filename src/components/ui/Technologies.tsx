@@ -1,5 +1,3 @@
-import { type Component } from "solid-js";
-import { TechCategory, Technology } from "~/components";
 import {
   SiCss3,
   SiDeno,
@@ -22,8 +20,23 @@ import {
   SiVisualstudiocode,
   SiVite,
 } from "solid-icons/si";
+import { JSX } from "solid-js";
+import { IconTypes } from "solid-icons";
 
-export const Technologies: Component = () => {
+import Link from "./Link";
+
+interface TechCategoryProps {
+  title: string;
+  children: JSX.Element;
+}
+
+interface TechnologyProps {
+  title: string;
+  href: string;
+  icon: IconTypes;
+}
+
+export default function Technologies() {
   return (
     <ul class="grid sm:grid-cols-2 gap-5 grid-flow-row">
       <TechCategory title="Tools">
@@ -108,4 +121,31 @@ export const Technologies: Component = () => {
       </TechCategory>
     </ul>
   );
-};
+}
+
+function TechCategory(props: TechCategoryProps) {
+  const id = () => props.title.replaceAll(" ", "-").toLowerCase();
+
+  return (
+    <li class="bg-zinc-800 p-6 gap-5 rounded-lg space-y-5">
+      <Link href={`#${id()}`} class="text-white">
+        <h3 id={id()}>{props.title}</h3>
+      </Link>
+      <ul class="flex flex-wrap justify-evenly gap-8">{props.children}</ul>
+    </li>
+  );
+}
+
+function Technology(props: TechnologyProps) {
+  return (
+    <li>
+      <Link
+        href={props.href}
+        class="text-6xl lg:text-7xl text-white hover:scale-110 transition ease-in-out hover:text-blue-500"
+        target="_blank"
+      >
+        <props.icon title={props.title} />
+      </Link>
+    </li>
+  );
+}

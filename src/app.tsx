@@ -1,8 +1,9 @@
 import "~/app.css";
-import { type Component } from "solid-js";
-import { Header, Main, Footer } from "~/components";
+import Header from "./components/layout/Header";
+import Main from "./components/layout/Main";
+import Footer from "./components/layout/Footer";
 
-export default (() => {
+export default function () {
   return (
     <>
       <Header />
@@ -10,4 +11,4 @@ export default (() => {
       <Footer />
     </>
   );
-}) satisfies Component;
+}

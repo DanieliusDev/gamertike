@@ -1,10 +1,13 @@
 import { SiSpotify } from "solid-icons/si";
-import { For, Show, createSignal, onCleanup, type Component } from "solid-js";
-import { getCurrentlyPlaying } from "~/lib";
-import { Link } from "~/components";
 import { AiOutlinePause } from "solid-icons/ai";
+import { For, Show, createSignal, onCleanup, JSX } from "solid-js";
 
-export const CurrentlyPlaying: Component<{ class?: string }> = (props) => {
+import { cn, CurrentlyPlayingData, getCurrentlyPlaying } from "~/util";
+import Link from "../ui/Link";
+
+export default function CurrentlyPlaying(
+  props: JSX.HTMLAttributes<HTMLDivElement>,
+) {
   const [currentlyPlaying, setCurrentlyPlaying] =
     createSignal<CurrentlyPlayingData | null>(null);
 
@@ -18,8 +21,11 @@ export const CurrentlyPlaying: Component<{ class?: string }> = (props) => {
 
   return (
     <div
-      class="bg-green-600 border-4 border-green-700 p-5 rounded-lg flex gap-5 items-center"
-      classList={{ [props.class ?? ""]: true }}
+      {...props}
+      class={cn(
+        "bg-green-600 border-4 border-green-700 p-5 rounded-lg flex gap-5 items-center",
+        props.class,
+      )}
     >
       <Show when={currentlyPlaying()} fallback={<SiSpotify class="text-7xl" />}>
         <div class="relative min-w-20 h-20">
@@ -50,23 +56,23 @@ export const CurrentlyPlaying: Component<{ class?: string }> = (props) => {
       </div>
     </div>
   );
-};
+}
 
-const TrackName: Component<CurrentlyPlayingData> = (props) => {
+function TrackName(props: CurrentlyPlayingData) {
   return (
     <p class="text-2xl line-clamp-1">
       <Link
         class="text-white hover:underline hover:brightness-100"
         href={props.spotifyUrl}
-        newTab
+        target="_blank"
       >
         {props.trackName}
       </Link>
     </p>
   );
-};
+}
 
-const Artists: Component<CurrentlyPlayingData> = (props) => {
+function Artists(props: CurrentlyPlayingData) {
   return (
     <p class="text-lg line-clamp-1">
       <For each={props.artists}>
@@ -75,7 +81,7 @@ const Artists: Component<CurrentlyPlayingData> = (props) => {
             <Link
               class="text-white hover:underline hover:brightness-100"
               href={artist.spotifyUrl}
-              newTab
+              target="_blank"
             >
               {artist.name}
             </Link>
@@ -85,15 +91,15 @@ const Artists: Component<CurrentlyPlayingData> = (props) => {
       </For>
     </p>
   );
-};
+}
 
-const TrackProgress: Component<CurrentlyPlayingData> = (props) => {
+function TrackProgress(props: CurrentlyPlayingData) {
   return (
     <div class="flex gap-4 text-lg items-center">
       <p class="text-zinc-200">{formatTime(props.progressMs)}</p>
       <div class="w-full h-2 rounded-full bg-zinc-600">
         <div
-          class="bg-white h-full rounded-full"
+          class="bg-white h-full rounded-full transition-all"
           style={{
             width: `${(props.progressMs / props.durationMs) * 100}%`,
           }}
@@ -102,11 +108,11 @@ const TrackProgress: Component<CurrentlyPlayingData> = (props) => {
       <p class="text-zinc-200">{formatTime(props.durationMs)}</p>
     </div>
   );
-};
+}
 
-const formatTime = (ms: number) => {
+function formatTime(ms: number) {
   const totalSeconds = Math.floor(ms / 1000);
   const minutes = Math.floor(totalSeconds / 60);
   const seconds = totalSeconds % 60;
   return `${minutes}:${seconds < 10 ? 0 : ""}${seconds}`;
-};
+}
